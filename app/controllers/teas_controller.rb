@@ -8,7 +8,7 @@ class TeasController < ApplicationController
   def create
     @tea = Tea.new(tea_params)
     if @tea.save
-      
+
       redirect_to teas_path
     else
       render :index
@@ -26,6 +26,12 @@ class TeasController < ApplicationController
   def update
     @tea = Tea.find(params[:id])
     @tea.update_attributes!(tea_params)
+
+    redirect_to teas_path
+  end
+
+  def destroy
+    @tea = Tea.find(params[:id]).delete
 
     redirect_to teas_path
   end
