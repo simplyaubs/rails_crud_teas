@@ -8,10 +8,26 @@ class TeasController < ApplicationController
   def create
     @tea = Tea.new(tea_params)
     if @tea.save
+      
       redirect_to teas_path
     else
       render :index
     end
+  end
+
+  def show
+  @tea = Tea.find(params[:id])
+  end
+
+  def edit
+    @tea = Tea.find(params[:id])
+  end
+
+  def update
+    @tea = Tea.find(params[:id])
+    @tea.update_attributes!(tea_params)
+
+    redirect_to teas_path
   end
 
   private

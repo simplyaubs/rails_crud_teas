@@ -8,14 +8,6 @@
     <%= f.text_field :category %>
   </p>
   <p>
-    <%= f.submit 'Add tea' %>
+    <%= f.submit 'Update tea' %>
   </p>
-<% end %>
-
-<% @teas.each do |tea| %>
-<ul>
-  <li>
-    <%= link_to "#{tea.name}", tea_path(tea) %>, <%= tea.category %>
-  </li>
-</ul>
 <% end %>
