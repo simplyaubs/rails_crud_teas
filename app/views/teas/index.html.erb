@@ -1,0 +1,21 @@
+<%= form_for @tea do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.submit 'Add tea' %>
+  </p>
+<% end %>
+
+<% @teas.each do |tea| %>
+<ul>
+  <li>
+    <%= tea.name %>, <%= tea.category %>
+  </li>
+</ul>
+<% end %>
